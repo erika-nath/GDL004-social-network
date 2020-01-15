@@ -1,18 +1,11 @@
 export default () =>{
-    const viewLogin = `
+    const viewProfile = `
     
-    <h2><strong>HOLAAAA....</strong></h2>
+    <h2><strong>this is your profile</strong></h2>
     
     `
     const divElement = document.createElement ('div');
-    divElement.innerHTML = viewLogin;
+    divElement.innerHTML = viewProfile;
     return divElement;
 }
-
-
-
-
-
-
-
 
