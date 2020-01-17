@@ -19,19 +19,33 @@
         <li>
           <a href="#/SignUp">Sign Up</a>
         </li>
-        <li>
-          <a href="#/Profile">Profile</a>
-        </li>
-         </ul>
-
+      </ul>
     </nav>
   </header>
   
   <section id="container"></section>
 
   
-  <footer>Made by Erica, Fabi , and Karen</footer>
-
   <script type="module" src="main.js"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAXoKJeXka7gPwpuMFHtZgLy5BoiATMiXY",
+      authDomain: "redsocialneek.firebaseapp.com",
+      databaseURL: "https://redsocialneek.firebaseio.com",
+      projectId: "redsocialneek",
+      storageBucket: "redsocialneek.appspot.com",
+      messagingSenderId: "1026159709574",
+      appId: "1:1026159709574:web:aa67bc56111bc75482b007"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
 </body>
 </html>

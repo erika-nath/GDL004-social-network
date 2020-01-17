@@ -1,15 +1,40 @@
 export default () =>{
     const viewSignup = `
-    <div class="logoNeek"><img src="images/LogoNeek.png" alt="Logo neek" width="180"></div>
-    <h2><strong>NEEK</strong></h2>
-    <h4>Welcome to the social network from entrepreneurs</h4>
-    <input type="email"></input>
-    <input type="password"></input>
-    <button>Log in</button>
-    <p>Or Sign up whith...</p>
-    <p>¿Don´t have an account?<a href="#/login">Login</a></p>
-    `
+        
+        <h4>
+            PRUEBA DE SIGN UP
+        </h4>
+        
+        `;
+
+    const button = document.createElement('button');
+        button.innerHTML="Login";
+        button.addEventListener('click',UserData);
+
+    const text= document.createElement('p');
+        text.innerHTML="¿Don´t have an account?";
+
+    const divcontainer = document.createElement('div');
+        divcontainer.innerHTML= viewSignup;
+        divcontainer.appendChild(button);
+        divcontainer.appendChild(text);
+
     const divElement = document.createElement ('div');
-    divElement.innerHTML = viewSignup;
+        divElement.appendChild ( divcontainer);
     return divElement;
-}
+
+
+};
+
+function UserData (){
+    const userEmail= document.getElementById('email').value;
+    const userPassword= document.getElementById('password').value;
+ 
+};
+    
+
+
+
+
+
+
