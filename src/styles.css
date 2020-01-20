@@ -4,7 +4,6 @@
     font-family: 'Varela Round', sans-serif;
     font-size: 15px;
     text-align: center;
-    background: rgb(14, 224, 154);
     height: 40px;
     align-items: center;
     gap: 1em;   
@@ -35,4 +34,20 @@
 .neekTextHomePage{
     grid-row: auto;
     
+}
+
+.loginPage{
+    font-family: 'Varela Round', sans-serif;
+    background: #CCEDD2;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.imgsFByGoogleSignup{
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr)
 }

@@ -3,7 +3,7 @@ export default () =>{
         <div class='homePage'>
 
             <div class='logoNeekHomePage'>
-                <img src="./images/LogoNeek.png" 
+                <img src="./images/Logo Neek.png" 
                 alt="Logo neek" 
                 width="145">
             </div>
@@ -21,4 +21,5 @@ export default () =>{
     divElement.innerHTML = viewHome;
     return divElement;
 }
+
 
