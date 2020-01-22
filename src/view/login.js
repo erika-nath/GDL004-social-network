@@ -1,3 +1,6 @@
+import {controlador} from '../view-controler/index.js'
+
+
 export default () =>{
     const viewLogin = `
     <div class="logoNeek">
@@ -18,7 +21,8 @@ export default () =>{
 
     const button = document.createElement('button');
         button.innerHTML="Login";
-        button.addEventListener('click',UserData);
+        button.setAttribute('id', 'bottonLogin');
+        
 
     
     const textsignup= document.createElement('p');
@@ -26,6 +30,8 @@ export default () =>{
     const imgFacebook= document.createElement('img');
     const divImgGoogle= document.createElement('div');
     const imgGoogle= document.createElement('img');
+    const divImgTw= document.createElement('div');
+    const imgTwitter= document.createElement('img');
     const divImgsFBGoogle= document.createElement('div');
     divImgsFBGoogle.classList.add('imgsFByGoogleSignup');
 
@@ -35,12 +41,23 @@ export default () =>{
     imgFacebook.setAttribute('width', '70');
     imgGoogle.setAttribute('src', './images/logoGoogle.png');
     imgGoogle.setAttribute('width', '55');
+    imgTwitter.setAttribute('src', './images/LogoTwitter.png'); 
+    imgTwitter.setAttribute('width', '50');
+
+    //eventos para la autenticación de las Redes Sociales.
+
+    imgFacebook.addEventListener('click', () => console.log("ya entre"));
+    imgGoogle.addEventListener('click', () => console.log("ya entre"));
+    imgTwitter.addEventListener('click', () => console.log("ya entre"));
+
 
     divImgFB.appendChild(imgFacebook);
     divImgGoogle.appendChild(imgGoogle);
+    divImgTw.appendChild(imgTwitter); 
 
     divImgsFBGoogle.appendChild(divImgFB);
     divImgsFBGoogle.appendChild(divImgGoogle);
+    divImgsFBGoogle.appendChild(divImgTw); 
 
 
     const text= document.createElement('p');
@@ -61,21 +78,21 @@ export default () =>{
         divcontainer.appendChild(text);
         
 
-    const divElement = document.createElement ('div');
-        divElement.appendChild ( divcontainer);
-
-    return divElement;
+    return divcontainer;
 
 };
 
 
 
-function UserData (){
-    const userEmail= document.getElementById('email').value;
-    const userPassword= document.getElementById('password').value;
-    console.log(userEmail+userPassword);
- 
-};
+
+/*    firebase.auth().createUserWithEmailAndPassword(userEmail,userPassword)
+    .then(res=>{
+    alert("Se registro Correctamente")
+
+ }).catch(err=>{
+        alert("ocurrio un error")
+ })
+};*/
 
 
 
