@@ -5,15 +5,20 @@ const changeView = (route) => {
     const container =document.getElementById('container');
     container.innerHTML='';
    switch (route) {
-       case '#/': {return container.appendChild(components.home())}
-       case '#/Login': {return container.appendChild(components.login())}
-       case '#/SignUp': {return container.appendChild(components.signup())}
-       case '#/Profile': {return container.appendChild(components.profile())}
+       case '#/Login': {
+           return container.appendChild(components.login())
+            break;
+        }
 
-
-                 
-          default:
-           break;
+       case '#/SignUp': {
+           return container.appendChild(components.signup())
+            break;
+        }
+              
+        default: {
+            return container.appendChild(components.home());
+            break;
+         }
    }
 };
 
