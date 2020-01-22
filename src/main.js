@@ -1,13 +1,13 @@
-import { changeView } from './view-controler/index.js'
+import { controlador } from './view-controler/index.js'
 
 
 const init = () => {
-    changeView (window.location.hash);
-    window.addEventListener('hashchange',() => {changeView (window.location.hash);
-    });
-
+    //changeView (window.location.hash);
+    controlador.changeTmp(window.location.hash);
+    window.addEventListener('hashchange', () => controlador.changeTmp(window.location.hash));
 
 };
 
 window.addEventListener('load', init);
 
+ 
