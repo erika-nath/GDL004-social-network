@@ -1,5 +1,3 @@
-import {controlador} from '../view-controler/index.js'
-
 
 export default () =>{
     const viewLogin = `
@@ -44,13 +42,7 @@ export default () =>{
     imgTwitter.setAttribute('src', './images/LogoTwitter.png'); 
     imgTwitter.setAttribute('width', '50');
 
-    //eventos para la autenticación de las Redes Sociales.
-
-    imgFacebook.addEventListener('click', () => console.log("ya entre"));
-    imgGoogle.addEventListener('click', () => console.log("ya entre"));
-    imgTwitter.addEventListener('click', () => console.log("ya entre"));
-
-
+    
     divImgFB.appendChild(imgFacebook);
     divImgGoogle.appendChild(imgGoogle);
     divImgTw.appendChild(imgTwitter); 
@@ -84,15 +76,6 @@ export default () =>{
 
 
 
-
-/*    firebase.auth().createUserWithEmailAndPassword(userEmail,userPassword)
-    .then(res=>{
-    alert("Se registro Correctamente")
-
- }).catch(err=>{
-        alert("ocurrio un error")
- })
-};*/
 
 
 

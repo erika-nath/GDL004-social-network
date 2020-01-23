@@ -12,23 +12,27 @@ const components ={
 };
 
 const vista ={
-    init: () =>{
-        const form = document.getElementById('form-marcadores');
-               
-            form.addEventListener('submit', (e) =>{
-                e.preventDefault();
-                const nuevomarcador={
-                    id:Date.now(),
-                    nombre:form.nombre.value,
-                    descripcion: form.descripcion.value,
-                    URL: form.url.value
-
-                }
-                form.reset();
-                controlador.agregarMarcador(nuevomarcador);
-            });
+    init: {
+        signup: () => {
+          const formSignup = document.getElementById('form-signup');
+         
+          formSignup.addEventListener('submit', (e) => {
+            e.preventDefault()
+            const userdata = {
+              email: formSignup.email.value,
+              password: formSignup.password.value
+            }
+            controlador.authEmailAndPassword(userdata);
+            console.log(userdata);
+            if(userdata.email !== '' && userdata.password !== '' && userdata.password.length >= 6) {
+              controlador.detecthash("#/home");
+            } else {
+              alert("Debes de llenar los campola")
+            }
+          })
+          
+        }
     }
 };
-
 
 export { components, vista  };
