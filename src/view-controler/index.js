@@ -5,11 +5,16 @@ import { components, vista } from '../view/views.js';
 export const controlador={
     init: {
         signup: () =>  vista.init.signup(),
-        home: () => vista.init.home()
+        home: () => vista.init.home(),
+        login:() =>vista.init.login(),
       },
 
       authEmailAndPassword: (obj) => {
         modelo.authEmailAndPassword(obj);
+      },
+
+      authWithFacebook: () => {
+        modelo.authCuentaFacebook();
       },
 
         detecthash: (hash) => {
@@ -23,6 +28,7 @@ export const controlador={
        switch (hash) {
            case'#/Login': 
                 container.appendChild(components.login())
+                controlador.init.login() 
                 break;
     
            case '#/SignUp': 

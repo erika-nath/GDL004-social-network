@@ -19,20 +19,34 @@ const vista ={
           formSignup.addEventListener('submit', (e) => {
             e.preventDefault()
             const userdata = {
+              name: formSignup.userName.value,
+              type: formSignup.selectTypesSignup.value,
+              description: formSignup.descriptionArea.value,
               email: formSignup.email.value,
               password: formSignup.password.value
             }
+            
             controlador.authEmailAndPassword(userdata);
-            console.log(userdata);
-            if(userdata.email !== '' && userdata.password !== '' && userdata.password.length >= 6) {
+            if(userdata.email !== '' && userdata.password !== '' && userdata.password.length >= 6){
               controlador.detecthash("#/home");
+              
             } else {
-              alert("Debes de llenar los campola")
+              alert("*   PLEASE FILL ALL THE FIELS   *")
+            
             }
           })
           
+        },
+        login:() => {
+          const imgFacebook = document.getElementById('imgLogoFB');
+          const imgGoogle = document.getElementById('imgLogoGoogle')
+        
+          imgFacebook.addEventListener('click', () =>{
+            controlador.authWithFacebook();
+          });
         }
-    }
+
+      }
 };
 
 export { components, vista  };

@@ -37,8 +37,10 @@ export default () =>{
     textsignup.innerHTML="Or sign up with"
     imgFacebook.setAttribute('src', './images/logoFacebook.png');
     imgFacebook.setAttribute('width', '70');
+    imgFacebook.setAttribute('id', 'imgLogoFB');
     imgGoogle.setAttribute('src', './images/logoGoogle.png');
     imgGoogle.setAttribute('width', '55');
+    imgGoogle.setAttribute('id', 'imgLogoGoogle');
     imgTwitter.setAttribute('src', './images/LogoTwitter.png'); 
     imgTwitter.setAttribute('width', '50');
 
