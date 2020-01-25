@@ -33,8 +33,6 @@ const vista ={
             
             if(userdata.email !== '' && userdata.password.length >= 6){
               controlador.authEmailAndPassword(authEmail);
-
-              controlador.detecthash("#/home");
               
             } else {
               alert("*   PLEASE FILL ALL THE FIELS   *")

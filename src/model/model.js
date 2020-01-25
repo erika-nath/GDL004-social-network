@@ -1,3 +1,5 @@
+import { controlador } from '../view-controler/index.js';
+
 var firebaseConfig = {
   apiKey: "AIzaSyAXoKJeXka7gPwpuMFHtZgLy5BoiATMiXY",
   authDomain: "redsocialneek.firebaseapp.com",
@@ -17,20 +19,23 @@ export const modelo = {
     authEmailAndPassword: async function(objetoUser) {  
       await firebase.auth().createUserWithEmailAndPassword(objetoUser.email, objetoUser.password)
       .then((res) => {
-        alert("se registro correctamente");
+        alert('successfully registered') 
+        controlador.detecthash("#/home");
+  
       }).catch((err) => {
-        alert("ocurrio un error intentelo de nuevo");
+        alert('please verify your information and try again');
       });
+      
     },
 
-    authCuentaFacebook:() => {
+    authCuentaFacebook:async function (){
       const providerFacebook = new firebase.auth.FacebookAuthProvider();
-      firebase.auth().sigInWhithPopup(providerFacebook).then(res=>{
-        document.location.href="#/home";
-      }).catch(err=>{
-        alert(err);
-      })
-
+        await firebase.auth().sigInWhithPopup(providerFacebook)
+        .then(res=>{
+          controlador.detecthash("#/home");
+        }).catch(err=>{
+          alert('please verify your information and try again');
+        });
     },
 
     agregaMarcador: (nuevoMarcador) => {
