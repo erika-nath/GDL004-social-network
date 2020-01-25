@@ -25,9 +25,15 @@ const vista ={
               email: formSignup.email.value,
               password: formSignup.password.value
             }
+            const authEmail={
+              email: userdata.email,
+              password: userdata.password
+            }
             
-            controlador.authEmailAndPassword(userdata);
-            if(userdata.email !== '' && userdata.password !== '' && userdata.password.length >= 6){
+            
+            if(userdata.email !== '' && userdata.password.length >= 6){
+              controlador.authEmailAndPassword(authEmail);
+
               controlador.detecthash("#/home");
               
             } else {
