@@ -28,15 +28,26 @@ export const modelo = {
       
     },
 
-    authCuentaFacebook:async function (){
+    authCuentaFacebook: async function (){
       const providerFacebook = new firebase.auth.FacebookAuthProvider();
-        await firebase.auth().sigInWhithPopup(providerFacebook)
-        .then(res=>{
-          controlador.detecthash("#/home");
-        }).catch(err=>{
-          alert('please verify your information and try again');
-        });
+      await firebase.auth().signInWithPopup(providerFacebook)
+      .then(res=>{
+        controlador.detecthash("#/home");
+      }).catch(err=>{
+        alert('Try again, please');
+      });
     },
+    
+    authCuentaGoogle:async function (){
+      const providerGoogle = new firebase.auth.GoogleAuthProvider();
+      await firebase.auth().signInWithPopup(providerGoogle)
+      .then(res=>{
+        controlador.detecthash("#/home");
+      }).catch(err=>{
+        alert('Try again, please');
+      });
+    },
+
 
     agregaMarcador: (nuevoMarcador) => {
     return modelo.marcadores.push(nuevoMarcador)

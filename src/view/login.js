@@ -28,8 +28,6 @@ export default () =>{
     const imgFacebook= document.createElement('img');
     const divImgGoogle= document.createElement('div');
     const imgGoogle= document.createElement('img');
-    const divImgTw= document.createElement('div');
-    const imgTwitter= document.createElement('img');
     const divImgsFBGoogle= document.createElement('div');
     divImgsFBGoogle.classList.add('imgsFByGoogleSignup');
 
@@ -41,17 +39,16 @@ export default () =>{
     imgGoogle.setAttribute('src', './images/logoGoogle.png');
     imgGoogle.setAttribute('width', '55');
     imgGoogle.setAttribute('id', 'imgLogoGoogle');
-    imgTwitter.setAttribute('src', './images/LogoTwitter.png'); 
-    imgTwitter.setAttribute('width', '50');
+
 
     
     divImgFB.appendChild(imgFacebook);
     divImgGoogle.appendChild(imgGoogle);
-    divImgTw.appendChild(imgTwitter); 
+
 
     divImgsFBGoogle.appendChild(divImgFB);
     divImgsFBGoogle.appendChild(divImgGoogle);
-    divImgsFBGoogle.appendChild(divImgTw); 
+
 
 
     const text= document.createElement('p');

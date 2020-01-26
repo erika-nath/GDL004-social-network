@@ -15,6 +15,12 @@ export const controlador={
 
       authWithFacebook: () => {
         modelo.authCuentaFacebook();
+        
+        
+      },
+
+      authWithGoogle: () => {
+        modelo.authCuentaGoogle();
       },
 
         detecthash: (hash) => {

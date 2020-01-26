@@ -44,10 +44,14 @@ const vista ={
         login:() => {
           const imgFacebook = document.getElementById('imgLogoFB');
           const imgGoogle = document.getElementById('imgLogoGoogle')
-        
+                 
           imgFacebook.addEventListener('click', () =>{
             controlador.authWithFacebook();
           });
+          imgGoogle.addEventListener('click', () =>{
+          controlador.authWithGoogle();
+          });
+
         }
 
       }
