@@ -18,14 +18,17 @@ export const modelo = {
 
     authEmailAndPassword: async function(objetoUser) {  
       await firebase.auth().createUserWithEmailAndPassword(objetoUser.email, objetoUser.password)
-      .then((res) => {
-        alert('successfully registered') 
+      controlador.detecthash("#/home");
+
+    },
+
+    loginEmailAndPassword: async function (objetoLogin) {
+      try{
+        await firebase.auth().signInWithEmailAndPassword(objetoLogin.email,objetoLogin.password);
         controlador.detecthash("#/home");
-  
-      }).catch((err) => {
-        alert('please verify your information and try again');
-      });
-      
+      } catch (e) {
+        alert('please, check your information');
+      }
     },
 
 

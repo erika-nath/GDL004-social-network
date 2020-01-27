@@ -64,17 +64,17 @@ export default () =>{
     
      
 
-    const divcontainer = document.createElement('div');
-        divcontainer.setAttribute('id', 'form-Login' )
-        divcontainer.classList.add('loginPage');
-        divcontainer.innerHTML= viewLogin;
-        divcontainer.appendChild(button);
-        divcontainer.appendChild(textsignup);
-        divcontainer.appendChild(divImgsFBGoogle);
-        divcontainer.appendChild(text);
+    const formcontainer = document.createElement('form');
+        formcontainer.setAttribute('id', 'formLogin');
+        formcontainer.classList.add('loginPage');
+        formcontainer.innerHTML= viewLogin;
+        formcontainer.appendChild(button);
+        formcontainer.appendChild(textsignup);
+        formcontainer.appendChild(divImgsFBGoogle);
+        formcontainer.appendChild(text);
         
 
-    return divcontainer;
+    return formcontainer;
 
 };
 

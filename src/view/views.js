@@ -41,8 +41,27 @@ const vista ={
                     
           const imgFacebook = document.getElementById('imgLogoFB');
           const imgGoogle = document.getElementById('imgLogoGoogle');
-          const buttonLogin = document.getElementById('bottonLogin');
+          const formLogin = document.getElementById('formLogin');
+ 
           
+          formLogin.addEventListener('submit',(e) =>{
+            e.preventDefault()
+
+             const userDataLogin = {
+               email: formLogin.email.value,
+                password: formLogin.password.value
+           }
+           
+           if(userDataLogin.email !== '' && userDataLogin.password.length >= 6){
+               controlador.loginEmailAndPassword(userDataLogin);
+           } else{
+             alert('Please check again your information')
+           }
+           
+          })
+
+
+
           imgFacebook.addEventListener('click', () =>{
             controlador.authWithFacebook();
           });

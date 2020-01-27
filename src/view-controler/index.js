@@ -2,15 +2,19 @@
 import{ modelo } from '../model/model.js';
 import { components, vista } from '../view/views.js';
 
-export const controlador={
+export const controlador ={
     init: {
         signup: () =>  vista.init.signup(),
         home: () => vista.init.home(),
-        login:() =>vista.init.login(),
+        login:() =>vista.init.login()
       },
 
       authEmailAndPassword: (obj) => {
         modelo.authEmailAndPassword(obj);
+      },
+
+      loginEmailAndPassword: (userDataLogin) => {
+        modelo.loginEmailAndPassword(userDataLogin);
       },
 
       authWithFacebook: () => {
