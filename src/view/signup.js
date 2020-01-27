@@ -1,5 +1,9 @@
 export default () =>{
     const viewSignup = `
+        <div class="navLogin">
+            <a href="#/Login">Login</a>
+        </div>
+
         <h1 class="text-signup">SIGN UP HERE</h1>
 
         <form id="form-signup">
