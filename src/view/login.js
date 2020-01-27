@@ -1,6 +1,10 @@
 
 export default () =>{
     const viewLogin = `
+    <div class="navSignUp" >
+        <a href="#/SignUp">Sign up</a>
+    </div>     
+
     <div class="logoNeek">
         <img src="images/Logo Neek.png" alt="Logo neek" width="180">
     </div>

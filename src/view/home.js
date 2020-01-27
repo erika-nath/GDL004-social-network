@@ -1,5 +1,6 @@
 export default () =>{
     const viewHome = `
+
         <div class='homePage'>
 
             <div class='logoNeekHomePage'>
