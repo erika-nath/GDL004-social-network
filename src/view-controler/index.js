@@ -5,8 +5,9 @@ import { components, vista } from '../view/views.js';
 export const controlador ={
     init: {
         signup: () =>  vista.init.signup(),
-        home: () => vista.init.home(),
+        signOut: () => vista.init.signOut(),
         login:() =>vista.init.login()
+        
       },
 
       authEmailAndPassword: (obj) => {
@@ -24,7 +25,9 @@ export const controlador ={
       authWithGoogle: () => {
         modelo.authCuentaGoogle();
       },
-
+      signOut: () =>{
+        modelo.signOut();
+      },
 
         detecthash: (hash) => {
         location.hash = hash
@@ -37,18 +40,21 @@ export const controlador ={
        switch (hash) {
            case'#/Login': 
                 container.appendChild(components.login())
-                controlador.init.login() 
+                controlador.init.login();
                 break;
     
            case '#/SignUp': 
                container.appendChild(components.signup())
-               controlador.init.signup() 
+               controlador.init.signup();
                break;
 
+            case '#/home':
+              container.appendChild(components.home());
+              controlador.init.signOut();
+              break;
             default: 
-                return container.appendChild(components.home());
+                              
                 
-                break;
              
        }
 

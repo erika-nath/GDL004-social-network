@@ -37,12 +37,9 @@ const vista ={
           
         },
         login:() => {
-          
-                    
           const imgFacebook = document.getElementById('imgLogoFB');
           const imgGoogle = document.getElementById('imgLogoGoogle');
           const formLogin = document.getElementById('formLogin');
- 
           
           formLogin.addEventListener('submit',(e) =>{
             e.preventDefault()
@@ -60,16 +57,20 @@ const vista ={
            
           })
 
-
-
           imgFacebook.addEventListener('click', () =>{
             controlador.authWithFacebook();
           });
           imgGoogle.addEventListener('click', () =>{
             controlador.authWithGoogle();
           });
+        },
 
-
+        signOut: () =>{
+          const buttonSignOut = document.getElementById('buttonSignOut');
+          buttonSignOut.addEventListener('click', () =>{
+            controlador.signOut()
+          });
+          
         }
 
       }
