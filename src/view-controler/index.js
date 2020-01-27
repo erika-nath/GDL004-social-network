@@ -3,42 +3,54 @@ import{ modelo } from '../model/model.js';
 import { components, vista } from '../view/views.js';
 
 export const controlador={
-    init:() =>{
-        vista.init();
-    },
+    init: {
+        signup: () =>  vista.init.signup(),
+        home: () => vista.init.home(),
+        login:() =>vista.init.login(),
+      },
 
-    agregarMarcador: (nuevomarcador)=>{
-        modelo.agregaMarcador(nuevomarcador)
-        vista.representarMarcadores();
-    },
+      authEmailAndPassword: (obj) => {
+        modelo.authEmailAndPassword(obj);
+      },
 
-    obtenerMarcadores: () => {
-        return modelo.obtenerMarcadores();
-    },
+      authWithFacebook: () => {
+        modelo.authCuentaFacebook();
+        
+        
+      },
 
-    changeTmp: (route) => {
+      authWithGoogle: () => {
+        modelo.authCuentaGoogle();
+      },
+
+        detecthash: (hash) => {
+        location.hash = hash
+        controlador.changeTmp(window.location.hash)
+      },
+
+      changeTmp: (hash) => {
         const container =document.getElementById('container');
         container.innerHTML='';
-       switch (route) {
-           case '#/Login': {
+       switch (hash) {
+           case'#/Login': 
                 container.appendChild(components.login())
-                
+                controlador.init.login() 
                 break;
-            }
     
-           case '#/SignUp': {
-               return container.appendChild(components.signup())
-                break;
-            }
+           case '#/SignUp': 
+               container.appendChild(components.signup())
+               controlador.init.signup() 
+               break;
+               
+            
                   
-            default: {
+            default: 
                 return container.appendChild(components.home());
                 
                 break;
-             }
+             
        }
 
     
     }
 };
-
