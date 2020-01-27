@@ -15,13 +15,12 @@ export const controlador={
 
       authWithFacebook: () => {
         modelo.authCuentaFacebook();
-        
-        
       },
 
       authWithGoogle: () => {
         modelo.authCuentaGoogle();
       },
+
 
         detecthash: (hash) => {
         location.hash = hash
@@ -41,9 +40,7 @@ export const controlador={
                container.appendChild(components.signup())
                controlador.init.signup() 
                break;
-               
-            
-                  
+
             default: 
                 return container.appendChild(components.home());
                 

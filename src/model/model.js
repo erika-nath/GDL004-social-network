@@ -28,6 +28,7 @@ export const modelo = {
       
     },
 
+
     authCuentaFacebook: async function (){
       const providerFacebook = new firebase.auth.FacebookAuthProvider();
       await firebase.auth().signInWithPopup(providerFacebook)

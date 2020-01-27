@@ -5,21 +5,25 @@ export default () =>{
         <img src="images/Logo Neek.png" alt="Logo neek" width="180">
     </div>
     
-    <input 
-        type="email" 
-        id="email"
-        placeholder="Email:">
-    </input>
-    <input 
-        type="password" 
-        id="password" 
-      placeholder="Password:">
-    </input>
+        <input 
+            name="email"
+            type="email" 
+            id="email"
+            placeholder="Email:">
+        </input>
+        <input 
+            name="password"
+            type="password" 
+            id="password" 
+        placeholder="Password:">
+        </input>
+   
     `;
 
     const button = document.createElement('button');
         button.innerHTML="Login";
         button.setAttribute('id', 'bottonLogin');
+        button.setAttribute('name', 'button');
         
 
     
@@ -61,6 +65,7 @@ export default () =>{
      
 
     const divcontainer = document.createElement('div');
+        divcontainer.setAttribute('id', 'form-Login' )
         divcontainer.classList.add('loginPage');
         divcontainer.innerHTML= viewLogin;
         divcontainer.appendChild(button);

@@ -25,14 +25,9 @@ const vista ={
               email: formSignup.email.value,
               password: formSignup.password.value
             }
-            const authEmail={
-              email: userdata.email,
-              password: userdata.password
-            }
-            
             
             if(userdata.email !== '' && userdata.password.length >= 6){
-              controlador.authEmailAndPassword(authEmail);
+              controlador.authEmailAndPassword(userdata);
               
             } else {
               alert("*   PLEASE FILL ALL THE FIELS   *")
@@ -42,15 +37,19 @@ const vista ={
           
         },
         login:() => {
+          
+                    
           const imgFacebook = document.getElementById('imgLogoFB');
-          const imgGoogle = document.getElementById('imgLogoGoogle')
-                 
+          const imgGoogle = document.getElementById('imgLogoGoogle');
+          const buttonLogin = document.getElementById('bottonLogin');
+          
           imgFacebook.addEventListener('click', () =>{
             controlador.authWithFacebook();
           });
           imgGoogle.addEventListener('click', () =>{
-          controlador.authWithGoogle();
+            controlador.authWithGoogle();
           });
+
 
         }
 
