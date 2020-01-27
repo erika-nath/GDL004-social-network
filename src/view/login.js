@@ -17,11 +17,14 @@ export default () =>{
     </input>
     `;
 
+    //crea boton de login
+
     const button = document.createElement('button');
         button.innerHTML="Login";
         button.setAttribute('id', 'bottonLogin');
+    
         
-
+//crear
     
     const textsignup= document.createElement('p');
     const divImgFB= document.createElement('div');
@@ -32,6 +35,7 @@ export default () =>{
     divImgsFBGoogle.classList.add('imgsFByGoogleSignup');
 
 
+    //inyecta con atributos
     textsignup.innerHTML="Or sign up with"
     imgFacebook.setAttribute('src', './images/logoFacebook.png');
     imgFacebook.setAttribute('width', '70');
@@ -50,7 +54,7 @@ export default () =>{
     divImgsFBGoogle.appendChild(divImgGoogle);
 
 
-
+//crea script de abajo
     const text= document.createElement('p');
         text.innerHTML="¿Don´t have an account?";
         const areference= document.createElement('a');
@@ -60,6 +64,7 @@ export default () =>{
     
      
 
+//crea script de abajo
     const divcontainer = document.createElement('div');
         divcontainer.classList.add('loginPage');
         divcontainer.innerHTML= viewLogin;
