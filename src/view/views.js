@@ -24,7 +24,7 @@ const vista ={
               description: formSignup.descriptionArea.value,
               email: formSignup.email.value,
               password: formSignup.password.value
-            }       
+            }
             
             if(userdata.email !== '' && userdata.password.length >= 6){
               controlador.authEmailAndPassword(userdata);
@@ -37,16 +37,38 @@ const vista ={
           
         },
         login:() => {
+          
+                    
           const imgFacebook = document.getElementById('imgLogoFB');
-          const imgGoogle = document.getElementById('imgLogoGoogle')
-          const buttonLogin = document.getElementById('')
-                 
+          const imgGoogle = document.getElementById('imgLogoGoogle');
+          const formLogin = document.getElementById('formLogin');
+ 
+          
+          formLogin.addEventListener('submit',(e) =>{
+            e.preventDefault()
+
+             const userDataLogin = {
+               email: formLogin.email.value,
+                password: formLogin.password.value
+           }
+           
+           if(userDataLogin.email !== '' && userDataLogin.password.length >= 6){
+               controlador.loginEmailAndPassword(userDataLogin);
+           } else{
+             alert('Please check again your information')
+           }
+           
+          })
+
+
+
           imgFacebook.addEventListener('click', () =>{
             controlador.authWithFacebook();
           });
           imgGoogle.addEventListener('click', () =>{
-          controlador.authWithGoogle();
+            controlador.authWithGoogle();
           });
+
 
         }
 
