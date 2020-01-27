@@ -12,23 +12,49 @@ const components ={
 };
 
 const vista ={
-    init: () =>{
-        const form = document.getElementById('form-marcadores');
-               
-            form.addEventListener('submit', (e) =>{
-                e.preventDefault();
-                const nuevomarcador={
-                    id:Date.now(),
-                    nombre:form.nombre.value,
-                    descripcion: form.descripcion.value,
-                    URL: form.url.value
+    init: {
+        signup: () => {
+          const formSignup = document.getElementById('form-signup');
+         
+          formSignup.addEventListener('submit', (e) => {
+            e.preventDefault()
+            const userdata = {
+              name: formSignup.userName.value,
+              type: formSignup.selectTypesSignup.value,
+              description: formSignup.descriptionArea.value,
+              email: formSignup.email.value,
+              password: formSignup.password.value
+            }
+            const authEmail={
+              email: userdata.email,
+              password: userdata.password
+            }
+            
+            
+            if(userdata.email !== '' && userdata.password.length >= 6){
+              controlador.authEmailAndPassword(authEmail);
+              
+            } else {
+              alert("*   PLEASE FILL ALL THE FIELS   *")
+            
+            }
+          })
+          
+        },
+        login:() => {
+          const imgFacebook = document.getElementById('imgLogoFB');
+          const imgGoogle = document.getElementById('imgLogoGoogle')
+                 
+          imgFacebook.addEventListener('click', () =>{
+            controlador.authWithFacebook();
+          });
+          imgGoogle.addEventListener('click', () =>{
+          controlador.authWithGoogle();
+          });
 
-                }
-                form.reset();
-                controlador.agregarMarcador(nuevomarcador);
-            });
-    }
+        }
+
+      }
 };
-
 
 export { components, vista  };
