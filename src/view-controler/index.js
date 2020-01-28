@@ -3,37 +3,6 @@ import{ modelo } from '../model/model.js';
 import { components, vista } from '../view/views.js';
 
 export const controlador ={
-    init: {
-        signup: () =>  vista.init.signup(),
-        signOut: () => vista.init.signOut(),
-        login:() =>vista.init.login()
-        
-      },
-
-      authEmailAndPassword: (obj) => {
-        modelo.authEmailAndPassword(obj);
-      },
-
-      loginEmailAndPassword: (userDataLogin) => {
-        modelo.loginEmailAndPassword(userDataLogin);
-      },
-
-      authWithFacebook: () => {
-        modelo.authCuentaFacebook();
-      },
-
-      authWithGoogle: () => {
-        modelo.authCuentaGoogle();
-      },
-      signOut: () =>{
-        modelo.signOut();
-      },
-
-        detecthash: (hash) => {
-        location.hash = hash
-        controlador.changeTmp(window.location.hash)
-      },
-
       changeTmp: (hash) => {
         const container =document.getElementById('container');
         container.innerHTML='';
@@ -52,12 +21,39 @@ export const controlador ={
               container.appendChild(components.home());
               controlador.init.signOut();
               break;
-            default: 
-                              
-                
-             
-       }
-
+            default:                                                      
+        }
+      },
     
-    }
+    init: {
+      signup: () =>  vista.init.signup(),
+      signOut: () => vista.init.signOut(),
+      login:() =>vista.init.login()    
+    },
+
+    authEmailAndPassword: (obj) => {
+      modelo.authEmailAndPassword(obj);
+    },
+
+    loginEmailAndPassword: (userDataLogin) => {
+      modelo.loginEmailAndPassword(userDataLogin);
+    },
+
+    authWithFacebook: () => {
+      modelo.authCuentaFacebook();
+    },
+
+    authWithGoogle: () => {
+      modelo.authCuentaGoogle();
+    },
+    signOut: () =>{
+      modelo.signOut();
+    },
+
+      detecthash: (hash) => {
+      location.hash = hash
+      controlador.changeTmp(window.location.hash)
+    },
+
+
 };

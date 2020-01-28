@@ -21,7 +21,7 @@ export default () =>{
         </input>
    
     `;
-
+//Se crea boton Login
     const button = document.createElement('button');
         button.innerHTML="Login";
         button.setAttribute('id', 'bottonLogin');
