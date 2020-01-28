@@ -52,6 +52,11 @@ export const modelo = {
       });
     },
 
+    signOut: async function() {  
+      await firebase.auth().signOut()
+      controlador.detecthash("#/Login");
+
+    },
 
     agregaMarcador: (nuevoMarcador) => {
     return modelo.marcadores.push(nuevoMarcador)

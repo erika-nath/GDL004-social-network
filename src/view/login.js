@@ -1,9 +1,7 @@
 
 export default () =>{
     const viewLogin = `
-    <div class="navSignUp" >
-        <a href="#/SignUp">Sign up</a>
-    </div>     
+
 
     <div class="logoNeek">
         <img src="images/Logo Neek.png" alt="Logo neek" width="180">
@@ -23,9 +21,7 @@ export default () =>{
         </input>
    
     `;
-
-    //crea boton de login
-
+//Se crea boton Login
     const button = document.createElement('button');
         button.innerHTML="Login";
         button.setAttribute('id', 'bottonLogin');

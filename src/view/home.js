@@ -1,6 +1,7 @@
 export default () =>{
     const viewHome = `
 
+    <button type="submit" id="buttonSignOut">Sign Out</a></button>
         <div class='homePage'>
 
             <div class='logoNeekHomePage'>
