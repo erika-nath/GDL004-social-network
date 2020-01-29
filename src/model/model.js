@@ -13,9 +13,18 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 
+async function authCuentaFFunction() {
+  const providerFacebook = new firebase.auth.FacebookAuthProvider();
+  await firebase.auth().signInWithPopup(providerFacebook)
+    .then(() => {
+      controlador.detecthash('#/home');
+    }).catch(() => {
+      alert('Try again, please');
+    });
+}
+
 export const modelo = {
   marcadores: [],
-
   authEmailAndPassword: async function authUser(objetoUser) {
     try {
       await firebase.auth().createUserWithEmailAndPassword(objetoUser.email, objetoUser.password);
@@ -25,7 +34,7 @@ export const modelo = {
     }
   },
 
-  loginEmailAndPassword: async function (objetoLogin) {
+  loginEmailAndPassword: async function loginUser(objetoLogin) {
     try {
       await firebase.auth().signInWithEmailAndPassword(objetoLogin.email, objetoLogin.password);
       controlador.detecthash('#/home');
@@ -34,16 +43,8 @@ export const modelo = {
     }
   },
 
-
-  authCuentaFacebook: async function () {
-    const providerFacebook = new firebase.auth.FacebookAuthProvider();
-    await firebase.auth().signInWithPopup(providerFacebook)
-      .then(res => {
-        controlador.detecthash('#/home');
-      }).catch(err => {
-        alert('Try again, please');
-      });
-  },
+  authCuentaFacebook: authCuentaFFunction,
+  
 
   authCuentaGoogle: async function () {
     const providerGoogle = new firebase.auth.GoogleAuthProvider();
