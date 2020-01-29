@@ -1,5 +1,5 @@
-export default () =>{
-    const viewSignup = `
+export default () => {
+  const viewSignup = `
         <div class="navLogin">
             <a href="#/Login">Login</a>
         </div>
@@ -31,17 +31,7 @@ export default () =>{
         
     `;
 
-    
-
-    const divElement = document.createElement ('div');
-        divElement.innerHTML = viewSignup;
-    return divElement;
+  const divElement = document.createElement('div');
+  divElement.innerHTML = viewSignup;
+  return divElement;
 };
-
-
-
-
-
-
-
-

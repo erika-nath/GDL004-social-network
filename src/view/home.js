@@ -1,4 +1,4 @@
-export default () =>{
+  export default () => {
     const viewHome = `
 
     <button type="submit" id="buttonSignOut">Sign Out</a></button>
@@ -18,10 +18,8 @@ export default () =>{
                 <h4>The social network for entrepreneurs</h4>
             </div>
         </div>
-    `
-    const divElement = document.createElement ('div');
-    divElement.innerHTML = viewHome;
-    return divElement;
-}
-
-
+    `;
+  const divElement = document.createElement ( 'div' );
+  divElement.innerHTML = viewHome;
+  return divElement;
+};

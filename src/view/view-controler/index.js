@@ -1,4 +1,4 @@
 const changeView = (route) => {
-    console.log(route);
+  console.log(route);
 };
 export { changeView };
