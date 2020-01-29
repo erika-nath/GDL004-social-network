@@ -21,7 +21,9 @@ export const controlador ={
               container.appendChild(components.home());
               controlador.init.signOut();
               break;
-            default:                                                      
+            default:
+              container.appendChild(components.login())
+              controlador.init.login();                                                      
         }
       },
     
