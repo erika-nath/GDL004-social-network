@@ -26,33 +26,27 @@ const vista = {
         };
         if (userdata.email !== '' && userdata.password.length >= 6) {
           controlador.authEmailAndPassword(userdata);
-
-        }else {
+        } else {
           alert('*   PLEASE FILL ALL THE FIELS   *');
-
         }
       });
-    
     },
     login: () => {
       const imgFacebook = document.getElementById('imgLogoFB');
       const imgGoogle = document.getElementById('imgLogoGoogle');
       const formLogin = document.getElementById('formLogin');
-   
+
       formLogin.addEventListener('submit', (e) => {
         e.preventDefault();
-
         const userDataLogin = {
           email: formLogin.email.value,
           password: formLogin.password.value,
         };
-  
         if (userDataLogin.email !== '' && userDataLogin.password.length >= 6) {
           controlador.loginEmailAndPassword(userDataLogin);
         } else {
           alert('Please check again your information');
         }
-   
       });
 
       imgFacebook.addEventListener('click', () => {
@@ -68,7 +62,7 @@ const vista = {
       buttonSignOut.addEventListener('click', () => {
         controlador.signOut();
       });
-       
+  
     },
 
   },

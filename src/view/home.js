@@ -1,5 +1,5 @@
-  export default () => {
-    const viewHome = `
+export default () => {
+  const viewHome = `
 
     <button type="submit" id="buttonSignOut">Sign Out</a></button>
         <div class='homePage'>
@@ -19,7 +19,7 @@
             </div>
         </div>
     `;
-  const divElement = document.createElement ( 'div' );
+  const divElement = document.createElement('div');
   divElement.innerHTML = viewHome;
   return divElement;
 };

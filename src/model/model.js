@@ -16,14 +16,13 @@ firebase.initializeApp(firebaseConfig);
 export const modelo = {
   marcadores: [],
 
-  authEmailAndPassword: async function(objetoUser){
-    try{
+  authEmailAndPassword: async function authUser(objetoUser) {
+    try {
       await firebase.auth().createUserWithEmailAndPassword(objetoUser.email, objetoUser.password);
-    controlador.detecthash('#/home');
-    } catch (e){
+      controlador.detecthash('#/home');
+    } catch (e) {
       alert('The email address is already in use, please login');
-  }
-
+    }
   },
 
   loginEmailAndPassword: async function (objetoLogin) {
@@ -41,12 +40,12 @@ export const modelo = {
     await firebase.auth().signInWithPopup(providerFacebook)
       .then(res => {
         controlador.detecthash('#/home');
-      }).catch( err=> {
+      }).catch(err => {
         alert('Try again, please');
       });
   },
-    
-  authCuentaGoogle:async function () {
+
+  authCuentaGoogle: async function () {
     const providerGoogle = new firebase.auth.GoogleAuthProvider();
     await firebase.auth().signInWithPopup(providerGoogle)
       .then(res => {
@@ -59,19 +58,5 @@ export const modelo = {
   signOut: async function () {
     await firebase.auth().signOut();
     controlador.detecthash('#/Login');
-
-  },
-
-  agregaMarcador: (nuevoMarcador) => {
-    return modelo.marcadores.push(nuevoMarcador);
-  },
-  obtenerMarcadores: () => {
-    return modelo.marcadores;
-  },
-  eliminarMarcadores: () => {
-
-  },
-  editarMarcadores: () => {
-
   },
 };

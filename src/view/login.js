@@ -56,7 +56,7 @@ export default () => {
   const areference = document.createElement('a');
   areference.setAttribute('href', URL = '#/SignUp');
   areference.innerHTML = 'Sign Up';
-  text.appendChild ( areference );
+  text.appendChild(areference);
   const formcontainer = document.createElement('form');
   formcontainer.setAttribute('id', 'formLogin');
   formcontainer.classList.add('loginPage');
@@ -66,6 +66,4 @@ export default () => {
   formcontainer.appendChild(divImgsFBGoogle);
   formcontainer.appendChild(text);
   return formcontainer;
-
 };
-
