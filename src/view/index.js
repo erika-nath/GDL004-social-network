@@ -1,7 +1,7 @@
-import Login from './login.js';
+import  Login from './login.js';
 
-const components = {
-    login: Login,
-}
+    const components = {
+        login: Login,
+    }
 
 export { components };
