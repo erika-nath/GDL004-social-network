@@ -16,9 +16,13 @@ firebase.initializeApp(firebaseConfig);
 export const modelo = {
   marcadores: [],
 
-  authEmailAndPassword: async function(objetoUser){  
-    await firebase.auth().createUserWithEmailAndPassword(objetoUser.email, objetoUser.password);
+  authEmailAndPassword: async function(objetoUser){
+    try{
+      await firebase.auth().createUserWithEmailAndPassword(objetoUser.email, objetoUser.password);
     controlador.detecthash('#/home');
+    } catch (e){
+      alert('The email address is already in use, please login');
+  }
 
   },
 
