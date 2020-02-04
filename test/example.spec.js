@@ -1,17 +1,25 @@
-/*  import { example } from '../src/example.js';
+const firebasemock = require('firebase-mock');
+const mockauth = new firebasemock.MockFirebase();
+const mockfirestore = new firebasemock.MockFirestore();
+mockfirestore.autoFlush();
+mockauth.autoFlush();
 
-describe('example', () => {
-  it('debería ser una función', () => {
-    expect(typeof example).toBe('function');
-  });
-});
-*/
+global.firebase = firebasemock.MockFirebaseSdk(
 
-import { authEmailAndPassword } from '../src/model/model.js';
+  () => null,
+  () => mockauth,
+  () => mockfirestore
+);
 
 
-describe('example', () => {
-  it('debería ser una función', () => {
-    expect(typeof example).toBe('function');
-  });
-});
+import const {modelo} from '../src/model/model.js';
+it('funcion que loguea a usuario con  email y password', async () => {
+  expect.assertions(1);
+  try {
+    await user.loginEmailAndPassword('karen@gmail.com','123456');
+  } catch (e) {
+    expect(e).toEqual({
+      ("The email address is already in use, please login");
+    });
+  };
+

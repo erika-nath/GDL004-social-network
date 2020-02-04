@@ -24,7 +24,6 @@ async function authCuentaFFunction() {
 }
 
 export const modelo = {
-  marcadores: [],
   authEmailAndPassword: async function authUser(objetoUser) {
     try {
       await firebase.auth().createUserWithEmailAndPassword(objetoUser.email, objetoUser.password);
